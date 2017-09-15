@@ -25,7 +25,7 @@ This is a repo for a starter application for a Single Page Application featuring
 
 ## Installation
 ```
-git clone https://github.com/Zemke/starter-laravel-angular.git
+git clone https://github.com/styvesamson/test-api-pokemon.git/'
 ```
 ```
 composer install --prefer-dist
