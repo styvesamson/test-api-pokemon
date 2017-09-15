@@ -5,9 +5,9 @@ angular.module('todoApp', [
   'appRoutes',
   'enterStroke',
   'MainController',
-  'TodoController',
+  'PokemonController',
   'UserController',
   'UserService',
-  'TodoService',
+  'PokemonService',
 ]);
 

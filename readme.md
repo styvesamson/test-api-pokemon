@@ -1,17 +1,61 @@
-💁 *Zemke/starter-laravel-angular has been upgraded to AngularJS 1.5.8.*
+💁 *Teste  API  Pokemon - Backend
 
-💁 *Zemke/starter-laravel-angular has been upgraded to Laravel 5.3. You can pull the changes and run* `rm composer.lock && composer install --prefer-dist --no-scripts` *to merge the upgrade.*
+# Documentaçao do API 
+Api URL  (http://test.yvestoupe.com/api)
 
-# Laravel and AngularJS Starter Application
+Para testar o API usar Postman ou Advenced Rest Client
 
-This is a repo for a starter application for a Single Page Application featuring the modern Laravel PHP framework and Google’s acclaimed front-end framework AngularJS. Just download and install and you have a good foundation for building any application.
+Login
+
+=> Cadastro: passa como parametro nome, email e senha para se cadastrar na aplicação
+
+http://test.yvestoupe.com/api/cadastro
+Method POST
+
+Exemplo de dado [{"nome":"john","email":"john@me.com","senha":"1234"}]
+
+=> Login: Passar como parametro email e senha para se logar e gerar o token de acesso
+
+http://test.yvestoupe.com/api/login
+Method POST
+
+Exemplo de dado [{"email":"john@me.com","senha":"1234"}]
+
+Pokemon
+=> Lista todos os pokemons do banco de dados
+
+http://test.yvestoupe.com/api/pokemons
+Method GET
+
+=> Mostrar os detalhes de um pokemon
+
+http://test.yvestoupe.com/api/pokemon/id
+Method GET
+
+=> Cadastrar um novo pokemon com nome, tipo do pokemon, poder de ataque, poder de defesa e agilidade
+
+http://test.yvestoupe.com/api/pokemon/add
+Method POST
+
+Exemplo de dado [{"nome":"paka","tipo":"agua","poder_ataque":"zip","poder_defesa":"zap","agilidade":"zop"}]
+
+=> Alterar os dados do pokemon;
+
+http://test.yvestoupe.com/api/pokemon/id
+Method PUT
+
+=> Remover um pokemon
+
+http://test.yvestoupe.com/api/pokemon/id
+Method DELETE
 
 ## Features!
 
-- Single Page Application
-  - HTML5 mode URLs
-  - Optimized Laravel and AngularJS routes
-    - You kind of don’t need to care about routes, they work automatically as you add new views. Still allows for flexibility if you plan any special routes.
+- Laravel API
+  - User singUp & Login
+  - Full CRUD (Create, Update, Delete, List  Pokemons )
+   
+   
 - Authentication!
   - Flexible, extensible, clean
   - Token-based ([tymondesigns/jwt-auth](https://github.com/tymondesigns/jwt-auth))
@@ -30,14 +74,12 @@ git clone https://github.com/Zemke/starter-laravel-angular.git
 ```
 composer install --prefer-dist
 ```
-```
+```npm 
 npm install
 ```
 
 ### Database setup
 
-Edit `.env.example` according to your environment and save as `.env`.
-An application key can be generates with the command `php artisan key:generate`.
 
 Run these commands to create the tables within the database you have already created.
 
@@ -73,54 +115,3 @@ Now you can browse the site  [http://localhost:8080](http://localhost:8080). �
 - NPM
 - MySQL
 
-## Heroku deployment
-
-### Unignore some files
-
-You should remove `.env` and `composer.lock` from `.gitignore`.
-
-#### .env
-
-Set up your `.env` file like described in “Database setup” above.
-
-### Heroku buildpacks
-
-You will need to add custom buildpacks for Heroku. Create `.buildpacks` and paste:
-
-```
-https://github.com/heroku/heroku-buildpack-php
-https://github.com/heroku/heroku-buildpack-nodejs
-```
-
-### Procfile
-
-```
-web: vendor/bin/heroku-php-apache2 public/
-```
-
-### NPM config
-
-Your `package.json` should be changed to this:
-
-```json
-{
-    "private": true,
-    "devDependencies": {
-        "gulp": "^3.8.8"
-    },
-    "dependencies": {
-        "laravel-elixir": "^3.0.0",
-        "gulp": "^3.8.8"
-    },
-    "scripts": {
-        "postinstall": "gulp"
-    }
-}
-```
-
-The `scripts` `postinstall` part is the important here, this will generate the resources like JS and CSS files.
-
-Have fun! Any feedback is welcome. Use [Issues](https://github.com/Zemke/starter-laravel-angular/issues) or [Twitter](https://twitter.com/FlorianZemke). My Twitter handle is @FlorianZemke. I’m looking forward to talk to you.
-
-![Laravel](https://cloud.githubusercontent.com/assets/3391981/6683259/2e914726-cc84-11e4-856c-bb26bda733a0.png)
-![AngularJS](https://cloud.githubusercontent.com/assets/3391981/6683229/9e0ea694-cc83-11e4-9b2e-59524dafd069.jpg)

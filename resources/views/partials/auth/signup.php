@@ -2,8 +2,8 @@
       class="form-horizontal" novalidate>
     <div class="form-group">
         <div class="col-md-3">
-            <input type="text" id="username" ng-model="username"
-                   class="form-control" placeholder="Username">
+            <input type="text" id="nome" ng-model="nome"
+                   class="form-control" placeholder="Nome">
         </div>
     </div>
     <div class="form-group">
@@ -14,19 +14,19 @@
     </div>
     <div class="form-group">
         <div class="col-md-3">
-            <input type="password" id="password" ng-model="password"
-                   class="form-control" placeholder="Password">
+            <input type="senha" id="senha" ng-model="senha"
+                   class="form-control" placeholder="Senha">
         </div>
     </div>
     <div class="form-group">
         <div class="col-md-3">
-            <input type="password" id="passwordConfirmation" ng-model="passwordConfirmation"
-                   class="form-control" placeholder="Password again">
+            <input type="senha" id="senhaConfirmation" ng-model="senhaConfirmation"
+                   class="form-control" placeholder="Confirmar senha">
         </div>
     </div>
     <div class="form-group">
         <div class="col-md-4">
-            <button type="submit" class="btn btn-primary">Sign Up</button>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
         </div>
     </div>
 </form>

@@ -11,24 +11,24 @@ class User extends Authenticatable
     use Notifiable;
 
     protected $fillable = [
-        'username', 'email', 'password',
+        'nome', 'email', 'senha',
     ];
 
     protected $hidden = [
-        'password', 'remember_token',
+        'senha', 'remember_token',
     ];
 
-    public static function authenticate($username, $password)
+    public static function authenticate($email, $senha)
     {
-        $user = User::where('username', $username)->first();
-        if (!Hash::check($password, $user->password)) {
+        $user = User::where('email', $email)->first();
+        if (!Hash::check($senha, $user->senha)) {
             return false;
         }
         return $user;
     }
 
-    public function setPasswordAttribute($password)
+    public function setPasswordAttribute($senha)
     {
-        $this->attributes['password'] = Hash::make($password);
+        $this->attributes['senha'] = Hash::make($senha);
     }
 }

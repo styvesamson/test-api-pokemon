@@ -2,14 +2,14 @@
       class="form-horizontal" novalidate>
     <div class="form-group">
         <div class="col-md-3">
-            <input type="text" id="username" ng-model="username"
-                   class="form-control" placeholder="Username">
+            <input type="email" id="email" ng-model="email"
+                   class="form-control" placeholder="Email">
         </div>
     </div>
     <div class="form-group">
         <div class="col-md-3">
-            <input type="password" id="password" ng-model="password"
-                   class="form-control" placeholder="Password">
+            <input type="senha" id="senha" ng-model="senha"
+                   class="form-control" placeholder="Senha">
         </div>
     </div>
     <div class="form-group">

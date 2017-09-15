@@ -12,8 +12,10 @@ class UserController extends Controller
 {
     public function login(Request $request)
     {
-        $credentials = $request->only('username', 'password');
-        $authenticatedUser = User::authenticate($credentials['username'], $credentials['password']);
+
+        $credentials = $request->only('email', 'senha');
+        dd($credentials);
+        $authenticatedUser = User::authenticate($credentials['email'], $credentials['senha']);
 
         if (!$authenticatedUser) {
             return response()->json(['error' => 'invalid_credentials'], 401);
